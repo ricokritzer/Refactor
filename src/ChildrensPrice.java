@@ -5,6 +5,7 @@
  * Time: 12:48
  * To change this template use File | Settings | File Templates.
  */
+//Test für ersten Commit
 public class ChildrensPrice implements Price {
 
 
