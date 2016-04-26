@@ -25,7 +25,7 @@ class Customer {
             double thisAmount = 0;
             Rental each = (Rental) enum_rentals.nextElement();
             //determine amounts for each line
-            thisAmount = amountFor(each);
+            thisAmount = amountFor(each); //wurde bereits verbessert
             // add frequent renter points
             frequentRenterPoints ++;
             // add bonus for a two day new release rental
