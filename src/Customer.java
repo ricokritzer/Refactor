@@ -5,6 +5,7 @@ import java.util.*;
 class Customer {
     private String _name;
     private Vector _rentals = new Vector();
+    
     public Customer (String newname){
         _name = newname;
     };

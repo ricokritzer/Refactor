@@ -4,6 +4,7 @@ public class Movie {
     public static final int NEW_RELEASE = 1;
     private String title;
     private Price _price;
+    
     public Movie(String newtitle, int newpriceCode) {
         title = newtitle;
         setPriceCode(newpriceCode);
