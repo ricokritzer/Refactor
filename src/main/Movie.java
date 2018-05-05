@@ -3,14 +3,12 @@ package main;
 public class Movie
 {
 	private String title;
-	private Price price;
 	private PriceCategory category;
 
 	public Movie(String title, PriceCategory category)
 	{
 		this.title = title;
 		this.category = category;
-		this.price = new Price(category);
 	}
 
 	public PriceCategory getPriceCode()
@@ -25,12 +23,12 @@ public class Movie
 
 	double getCharge(int daysRented)
 	{
-		return price.getCharge(daysRented);
+		return PriceCategory.getCharge(category, daysRented);
 	}
 
 	public int getFrequentRenterPoints(int daysRented)
 	{
-		return price.getFrequentRenterPoints(daysRented);
+		return PriceCategory.getFrequentRenterPoints(category, daysRented);
 	}
 
 }
