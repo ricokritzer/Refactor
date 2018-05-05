@@ -47,8 +47,7 @@ class Customer
 		double result = 0;
 		for (Rental rental : this.rentals)
 		{
-			Rental each = rental;
-			result += each.getCharge();
+			result += rental.getCharge();
 		}
 		return result;
 	}
@@ -58,8 +57,7 @@ class Customer
 		int result = 0;
 		for (Rental rental : this.rentals)
 		{
-			Rental each = rental;
-			result += each.getFrequentRenterPoints();
+			result += rental.getFrequentRenterPoints();
 		}
 		return result;
 	}
