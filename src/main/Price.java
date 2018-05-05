@@ -1,16 +1,21 @@
 package main;
 
-public abstract class Price
+public class Price
 {
-	abstract PriceCategory getPriceCode();
+	private PriceCategory category;
+
+	public Price(PriceCategory category)
+	{
+		this.category = category;
+	}
 
 	double getCharge(int daysRented)
 	{
-		return PriceCategory.getCharge(getPriceCode(), daysRented);
+		return PriceCategory.getCharge(category, daysRented);
 	}
 
 	int getFrequentRenterPoints(int daysRented)
 	{
-		return PriceCategory.getFrequentRenterPoints(getPriceCode(), daysRented);
+		return PriceCategory.getFrequentRenterPoints(category, daysRented);
 	}
 }
