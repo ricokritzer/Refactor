@@ -30,5 +30,4 @@ public class Movie
 	{
 		return category.getFrequentRenterPoints(daysRented);
 	}
-
 }
