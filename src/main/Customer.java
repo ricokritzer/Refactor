@@ -5,6 +5,8 @@ import java.util.List;
 
 class Customer
 {
+	private static final String TAB = "\t";
+
 	private String name;
 	private List<Rental> rentals = new ArrayList<Rental>();
 
@@ -30,7 +32,7 @@ class Customer
 		{
 			Rental each = rental;
 			// show figures for this rental
-			result += "\t" + each.getMovie().getTitle() + "\t" + each.getCharge() + "\n";
+			result += TAB + each.getMovie().getTitle() + TAB + each.getCharge() + "\n";
 		}
 
 		// add footer line
