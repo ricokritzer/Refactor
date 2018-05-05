@@ -8,11 +8,6 @@ public class NewReleasePrice extends Price
 		return PriceCategory.NEW_RELEASE;
 	}
 
-	double getCharge(int daysRented)
-	{
-		return daysRented * 3;
-	}
-
 	@Override
 	int getFrequentRenterPoints(int daysRented)
 	{
