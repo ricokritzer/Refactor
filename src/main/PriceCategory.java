@@ -6,12 +6,12 @@ public enum PriceCategory
 	NEW_RELEASE(0, 3, 0, 0, 2), //
 	CHILDREN(1.5, 1.5, 3, 3, 1);
 
-	private double grundpreis = 0;
-	private double aufpreisFaktor = 0;
-	private int aufpreisAbTag = 0;
+	private double grundpreis;
+	private double aufpreisFaktor;
+	private int aufpreisAbTag;
 	private int rabatt;
 
-	private int renterPointsGreaterOne = 1;
+	private int renterPointsGreaterOne;
 
 	private PriceCategory(double grundpreis, double aufpreis, int aufpreisAbTag, int rabatt, int renterPointsGreaterOne)
 	{
