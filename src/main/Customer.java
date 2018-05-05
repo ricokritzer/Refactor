@@ -9,6 +9,9 @@ class Customer
 	private static final String NEW_LINE = System.lineSeparator();
 
 	private String name;
+	private double totalCharge = 0;
+	private int renterPoints = 0;
+
 	private List<Rental> rentals = new ArrayList<Rental>();
 
 	public Customer(String name)
@@ -16,9 +19,11 @@ class Customer
 		this.name = name;
 	}
 
-	public void addRental(Rental arg)
+	public void addRental(Rental rental)
 	{
-		rentals.add(arg);
+		rentals.add(rental);
+		renterPoints += rental.getFrequentRenterPoints();
+		totalCharge += rental.getCharge();
 	}
 
 	public String getName()
@@ -41,21 +46,11 @@ class Customer
 
 	double getTotalCharge()
 	{
-		double result = 0;
-		for (Rental rental : this.rentals)
-		{
-			result += rental.getCharge();
-		}
-		return result;
+		return totalCharge;
 	}
 
 	int getTotalFrequentRenterPoints()
 	{
-		int result = 0;
-		for (Rental rental : this.rentals)
-		{
-			result += rental.getFrequentRenterPoints();
-		}
-		return result;
+		return renterPoints;
 	}
 }
