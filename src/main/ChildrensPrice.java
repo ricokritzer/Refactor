@@ -3,9 +3,9 @@ package main;
 public class ChildrensPrice extends Price
 {
 	@Override
-	int getPriceCode()
+	PriceCategory getPriceCode()
 	{
-		return Movie.CHILDRENS;
+		return PriceCategory.CHILDREN;
 	}
 
 	double getCharge(int daysRented)

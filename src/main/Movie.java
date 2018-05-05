@@ -2,32 +2,28 @@ package main;
 
 public class Movie
 {
-	public static final int REGULAR = 0;
-	public static final int NEW_RELEASE = 1;
-	public static final int CHILDRENS = 2;
-
 	private String title;
 	private Price price;
 
-	public Movie(String title, int priceCode)
+	public Movie(String title, PriceCategory category)
 	{
 		this.title = title;
-		setPriceCode(priceCode);
+		setPriceCode(category);
 	}
 
-	public int getPriceCode()
+	public PriceCategory getPriceCode()
 	{
 		return price.getPriceCode();
 	}
 
-	public void setPriceCode(int arg)
+	public void setPriceCode(PriceCategory arg)
 	{
 		switch (arg)
 		{
 			case REGULAR:
 				price = new RegularPrice();
 				break;
-			case CHILDRENS:
+			case CHILDREN:
 				price = new ChildrensPrice();
 				break;
 			case NEW_RELEASE:

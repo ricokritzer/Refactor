@@ -7,8 +7,8 @@ import org.junit.Test;
 
 public class CustomerTest
 {
-	private final static int PRICE_CATEGORY_1 = 1;
-	private final static int PRICE_CATEGORY_2 = 2;
+	private final static PriceCategory PRICE_CATEGORY_1 = PriceCategory.NEW_RELEASE;
+	private final static PriceCategory PRICE_CATEGORY_2 = PriceCategory.CHILDREN;
 
 	private final static int ZERO_DAYS = 0;
 	private final static int ONE_DAY = 1;
@@ -116,7 +116,7 @@ public class CustomerTest
 		assertThat(customer.getTotalFrequentRenterPoints(), is(2));
 	}
 
-	private Customer rentMovie(int priceCode, int days)
+	private Customer rentMovie(PriceCategory priceCode, int days)
 	{
 		Customer customer = new Customer("");
 		Movie movie = new Movie("", priceCode);

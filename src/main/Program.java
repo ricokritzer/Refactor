@@ -14,8 +14,8 @@ public class Program
 	public static void main(String args[])
 	{
 		printLn("Welcome to the Movie Store");
-		Movie movie1 = new Movie("movie1", 1);
-		Movie movie2 = new Movie("movie2", 2);
+		Movie movie1 = new Movie("movie1", PriceCategory.NEW_RELEASE);
+		Movie movie2 = new Movie("movie2", PriceCategory.CHILDREN);
 		Rental rental1 = new Rental(movie1, 10);
 		Rental rental2 = new Rental(movie2, 5);
 		Customer joe = new Customer("joe");
