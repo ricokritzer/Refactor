@@ -1,35 +1,34 @@
 package main;
 
-import java.lang.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Customer
 {
-	private String _name;
-	private Vector _rentals = new Vector();
+	private String name;
+	private List<Rental> rentals = new ArrayList<Rental>();
 
 	public Customer(String newname)
 	{
-		_name = newname;
-	};
+		name = newname;
+	}
 
 	public void addRental(Rental arg)
 	{
-		_rentals.addElement(arg);
-	};
+		rentals.add(arg);
+	}
 
 	public String getName()
 	{
-		return _name;
-	};
+		return name;
+	}
 
 	public String statement()
 	{
-		Enumeration rentals = _rentals.elements();
 		String result = "Rental Record for " + getName() + "\n";
-		while (rentals.hasMoreElements())
+		for (Rental rental : this.rentals)
 		{
-			Rental each = (Rental) rentals.nextElement();
+			Rental each = rental;
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
 		}
@@ -40,18 +39,12 @@ class Customer
 		return result;
 	}
 
-	private double amountFor(Rental aRental)
-	{
-		return aRental.getCharge();
-	}
-
 	private double getTotalCharge()
 	{
 		double result = 0;
-		Enumeration rentals = _rentals.elements();
-		while (rentals.hasMoreElements())
+		for (Rental rental : this.rentals)
 		{
-			Rental each = (Rental) rentals.nextElement();
+			Rental each = rental;
 			result += each.getCharge();
 		}
 		return result;
@@ -60,10 +53,9 @@ class Customer
 	private int getTotalFrequentRenterPoints()
 	{
 		int result = 0;
-		Enumeration rentals = _rentals.elements();
-		while (rentals.hasMoreElements())
+		for (Rental rental : this.rentals)
 		{
-			Rental each = (Rental) rentals.nextElement();
+			Rental each = rental;
 			result += each.getFrequentRenterPoints();
 		}
 		return result;
