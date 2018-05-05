@@ -39,7 +39,7 @@ class Customer
 		return sb.toString();
 	}
 
-	private double getTotalCharge()
+	double getTotalCharge()
 	{
 		double result = 0;
 		for (Rental rental : this.rentals)
@@ -49,7 +49,7 @@ class Customer
 		return result;
 	}
 
-	private int getTotalFrequentRenterPoints()
+	int getTotalFrequentRenterPoints()
 	{
 		int result = 0;
 		for (Rental rental : this.rentals)
