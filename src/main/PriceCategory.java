@@ -30,4 +30,19 @@ public enum PriceCategory
 		}
 		return 0.0;
 	}
+
+	public static int getFrequentRenterPoints(PriceCategory cat, int daysRented)
+	{
+		switch (cat)
+		{
+			case CHILDREN:
+				return 1;
+			case NEW_RELEASE:
+				return (daysRented > 1) ? 2 : 1;
+			case REGULAR:
+				return 1;
+			default:
+				return 1;
+		}
+	}
 }
