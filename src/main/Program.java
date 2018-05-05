@@ -14,15 +14,15 @@ public class Program
 	public static void main(String args[])
 	{
 		printLn("Welcome to the Movie Store");
-		Movie m1 = new Movie("movie1", 1);
-		Movie m2 = new Movie("movie2", 2);
-		Rental r1 = new Rental(m1, 10);
-		Rental r2 = new Rental(m2, 5);
-		Customer c1 = new Customer("joe");
-		c1.addRental(r1);
-		c1.addRental(r2);
+		Movie movie1 = new Movie("movie1", 1);
+		Movie movie2 = new Movie("movie2", 2);
+		Rental rental1 = new Rental(movie1, 10);
+		Rental rental2 = new Rental(movie2, 5);
+		Customer joe = new Customer("joe");
+		joe.addRental(rental1);
+		joe.addRental(rental2);
 		printLn("Let's get the Statement");
-		printLn(c1.statement());
+		printLn(joe.statement());
 	}
 
 	public static void printLn(String ausgabe)
