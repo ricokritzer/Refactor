@@ -31,18 +31,8 @@ public enum PriceCategory
 		return grundpreis;
 	}
 
-	public static double getCharge(PriceCategory category, int days)
-	{
-		return category.getCharge(days);
-	}
-
 	public int getFrequentRenterPoints(int daysRented)
 	{
 		return daysRented > 1 ? renterPointsGreaterOne : 1;
-	}
-
-	public static int getFrequentRenterPoints(PriceCategory cat, int daysRented)
-	{
-		return cat.getFrequentRenterPoints(daysRented);
 	}
 }

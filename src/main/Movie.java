@@ -23,12 +23,12 @@ public class Movie
 
 	double getCharge(int daysRented)
 	{
-		return PriceCategory.getCharge(category, daysRented);
+		return category.getCharge(daysRented);
 	}
 
 	public int getFrequentRenterPoints(int daysRented)
 	{
-		return PriceCategory.getFrequentRenterPoints(category, daysRented);
+		return category.getFrequentRenterPoints(daysRented);
 	}
 
 }
