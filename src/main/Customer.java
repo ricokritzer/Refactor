@@ -27,18 +27,18 @@ class Customer
 
 	public String statement()
 	{
-		String result = "Rental Record for " + getName() + "\n";
+		StringBuilder sb = new StringBuilder("Rental Record for " + getName() + "\n");
 		for (Rental rental : this.rentals)
 		{
 			Rental each = rental;
 			// show figures for this rental
-			result += TAB + each.getMovie().getTitle() + TAB + each.getCharge() + "\n";
+			sb.append(TAB + each.getMovie().getTitle() + TAB + each.getCharge() + "\n");
 		}
 
 		// add footer line
-		result += "Amount owed is " + getTotalCharge() + "\n";
-		result += "You earned " + getTotalFrequentRenterPoints() + " frequent renter points";
-		return result;
+		sb.append("Amount owed is " + getTotalCharge() + "\n");
+		sb.append("You earned " + getTotalFrequentRenterPoints() + " frequent renter points");
+		return sb.toString();
 	}
 
 	private double getTotalCharge()
