@@ -11,9 +11,9 @@ class Customer
 	private String name;
 	private List<Rental> rentals = new ArrayList<Rental>();
 
-	public Customer(String newname)
+	public Customer(String name)
 	{
-		name = newname;
+		this.name = name;
 	}
 
 	public void addRental(Rental arg)
@@ -32,11 +32,9 @@ class Customer
 		for (Rental rental : this.rentals)
 		{
 			Rental each = rental;
-			// show figures for this rental
 			sb.append(TAB + each.getMovie().getTitle() + TAB + each.getCharge() + NEW_LINE);
 		}
 
-		// add footer line
 		sb.append("Amount owed is " + getTotalCharge() + NEW_LINE);
 		sb.append("You earned " + getTotalFrequentRenterPoints() + " frequent renter points");
 		return sb.toString();
@@ -61,5 +59,4 @@ class Customer
 		}
 		return result;
 	}
-
 }
