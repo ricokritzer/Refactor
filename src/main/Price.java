@@ -11,6 +11,6 @@ public abstract class Price
 
 	int getFrequentRenterPoints(int daysRented)
 	{
-		return 1;
+		return PriceCategory.getFrequentRenterPoints(getPriceCode(), daysRented);
 	}
 }
