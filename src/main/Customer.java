@@ -6,6 +6,7 @@ import java.util.List;
 class Customer
 {
 	private static final String TAB = "\t";
+	private static final String NEW_LINE = System.lineSeparator();
 
 	private String name;
 	private List<Rental> rentals = new ArrayList<Rental>();
@@ -27,16 +28,16 @@ class Customer
 
 	public String statement()
 	{
-		StringBuilder sb = new StringBuilder("Rental Record for " + getName() + "\n");
+		StringBuilder sb = new StringBuilder("Rental Record for " + getName() + NEW_LINE);
 		for (Rental rental : this.rentals)
 		{
 			Rental each = rental;
 			// show figures for this rental
-			sb.append(TAB + each.getMovie().getTitle() + TAB + each.getCharge() + "\n");
+			sb.append(TAB + each.getMovie().getTitle() + TAB + each.getCharge() + NEW_LINE);
 		}
 
 		// add footer line
-		sb.append("Amount owed is " + getTotalCharge() + "\n");
+		sb.append("Amount owed is " + getTotalCharge() + NEW_LINE);
 		sb.append("You earned " + getTotalFrequentRenterPoints() + " frequent renter points");
 		return sb.toString();
 	}
