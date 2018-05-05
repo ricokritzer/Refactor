@@ -2,33 +2,35 @@ package main;
 
 public enum PriceCategory
 {
-	REGULAR, NEW_RELEASE, CHILDREN;
+	REGULAR(2, 1.5, 2, 1), //
+	NEW_RELEASE(0, 3, 0, 0), //
+	CHILDREN(1.5, 1.5, 3, 3);
+
+	private double grundpreis = 0;
+	private double aufpreisFaktor = 0;
+	private int aufpreisAbTag = 0;
+	private int rabatt;
+
+	private PriceCategory(double grundpreis, double aufpreis, int aufpreisAbTag, int rabatt)
+	{
+		this.grundpreis = grundpreis;
+		this.aufpreisFaktor = aufpreis;
+		this.aufpreisAbTag = aufpreisAbTag;
+		this.rabatt = rabatt;
+	}
+
+	public double getCharge(int days)
+	{
+		if (days > aufpreisAbTag)
+		{
+			return days * aufpreisFaktor - rabatt;
+		}
+		return grundpreis;
+	}
 
 	public static double getCharge(PriceCategory category, int days)
 	{
-		if (category == NEW_RELEASE)
-		{
-			return days * 3;
-		}
-		else if (category == REGULAR)
-		{
-			double result = 2;
-			if (days > 2)
-			{
-				result += (days - 2) * 1.5;
-			}
-			return result;
-		}
-		else if (category == CHILDREN)
-		{
-			double result = 1.5;
-			if (days > 3)
-			{
-				result += (days - 3) * 1.5;
-			}
-			return result;
-		}
-		return 0.0;
+		return category.getCharge(days);
 	}
 
 	public static int getFrequentRenterPoints(PriceCategory cat, int daysRented)
