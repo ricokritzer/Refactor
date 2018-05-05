@@ -31,8 +31,7 @@ class Customer
 		StringBuilder sb = new StringBuilder("Rental Record for " + getName() + NEW_LINE);
 		for (Rental rental : this.rentals)
 		{
-			Rental each = rental;
-			sb.append(TAB + each.getMovie().getTitle() + TAB + each.getCharge() + NEW_LINE);
+			sb.append(TAB + rental.getMovie().getTitle() + TAB + rental.getCharge() + NEW_LINE);
 		}
 
 		sb.append("Amount owed is " + getTotalCharge() + NEW_LINE);
