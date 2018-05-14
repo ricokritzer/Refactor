@@ -44,12 +44,12 @@ class Customer
 		return sb.toString();
 	}
 
-	double getTotalCharge()
+	public double getTotalCharge()
 	{
 		return totalCharge;
 	}
 
-	int getTotalFrequentRenterPoints()
+	public int getTotalFrequentRenterPoints()
 	{
 		return renterPoints;
 	}
